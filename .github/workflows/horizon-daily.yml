@@ -1,0 +1,60 @@
+name: Horizon Daily
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 每天 09:00 CST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@v4
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Build config (inject CF Account ID)
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          with open("data/config.github.json") as f:
+              config = json.load(f)
+          config["ai"] = {
+              "provider": "openai",
+              "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+              "api_key_env": "CF_API_TOKEN",
+              "base_url": f"https://api.cloudflare.com/client/v4/accounts/{os.environ['CF_ACCOUNT_ID']}/ai/v1",
+              "temperature": 0.3,
+              "max_tokens": 4096,
+              "throttle_sec": 0,
+              "analysis_concurrency": 1,
+              "enrichment_concurrency": 1
+          }
+          with open("data/config.json", "w") as f:
+              json.dump(config, f, indent=2, ensure_ascii=False)
+          EOF
+
+      - name: Run Horizon
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: uv run horizon --hours 24
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          keep_files: true
+          commit_message: "Daily summary: $(date +'%Y-%m-%d')"
+          enable_jekyll: true
