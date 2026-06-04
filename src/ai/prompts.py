@@ -54,7 +54,12 @@ Consider:
 - Technical depth and novelty
 - Potential impact on the field
 - Quality of writing/presentation
-- Relevance to software engineering, AI/ML, and systems research
+- Relevance to the following priority topics (give higher scores to content in these areas):
+  1. AI products, applications, and product launches — new tools, features, UX breakthroughs, adoption stories
+  2. AI startups — funding rounds, pivots, founder insights, go-to-market strategies, emerging players
+  3. Video surveillance and physical security industry — camera technology, VMS, access control, AI-powered analytics, IPVM-style market analysis, major vendors (Axis, Hikvision, Dahua, Milestone, Genetec, Verkada, etc.)
+  4. Computer vision applied to security and monitoring use cases
+  5. General software engineering, AI/ML research, and systems research
 - Community discussion quality: insightful comments, diverse viewpoints, and debates increase value
 - Engagement signals: high upvotes/favorites with substantive discussion indicate community-validated importance
 """

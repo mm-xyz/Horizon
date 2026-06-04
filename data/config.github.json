@@ -48,6 +48,30 @@
         "category": "ai-tools"
       },
       {
+        "name": "VentureBeat AI",
+        "url": "https://venturebeat.com/ai/feed/",
+        "enabled": true,
+        "category": "ai-products"
+      },
+      {
+        "name": "The Decoder",
+        "url": "https://the-decoder.com/feed/",
+        "enabled": true,
+        "category": "ai-products"
+      },
+      {
+        "name": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "enabled": true,
+        "category": "ai-startup"
+      },
+      {
+        "name": "SecurityInfoWatch",
+        "url": "https://www.securityinfowatch.com/rss/all",
+        "enabled": true,
+        "category": "surveillance"
+      },
+      {
         "name": "LWN.net (subscriber full-text)",
         "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
         "enabled": false,
@@ -64,16 +88,25 @@
           "time_filter": "day",
           "fetch_limit": 15,
           "min_score": 50
-        }
-      ],
-      "users": [
+        },
         {
-          "username": "iamthatis",
+          "subreddit": "artificial",
           "enabled": true,
-          "sort": "new",
-          "fetch_limit": 10
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50
+        },
+        {
+          "subreddit": "startups",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 30
         }
       ],
+      "users": [],
       "fetch_comments": 5
     },
     "twitter": {
