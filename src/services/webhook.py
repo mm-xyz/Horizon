@@ -348,13 +348,13 @@ class WebhookNotifier:
         if lang == "zh":
             if item_count == 0:
                 return (
-                    f"# Horizon 每日速递 - {date}\n\n"
-                    f"> 已分析 {all_items_count} 条内容，暂无达到重要性阈值的资讯。"
+                    f"# Horizon 每日速遞 - {date}\n\n"
+                    f"> 已分析 {all_items_count} 條內容，暫無達到重要性閾值的資訊。"
                 )
             return (
-                f"# Horizon 每日速递 - {date}\n\n"
-                f"> 从 {all_items_count} 条内容中筛选出 {item_count} 条重要资讯。\n\n"
-                "点击下方新闻面板即可在飞书内展开阅读全文。"
+                f"# Horizon 每日速遞 - {date}\n\n"
+                f"> 從 {all_items_count} 條內容中篩選出 {item_count} 條重要資訊。\n\n"
+                "點選下方新聞面板即可在飛書內展開閱讀全文。"
             )
 
         if item_count == 0:
@@ -415,7 +415,7 @@ class WebhookNotifier:
                     "title": {
                         "tag": "plain_text",
                         "content": (
-                            f"Horizon {date} 折叠日报"
+                            f"Horizon {date} 摺疊日報"
                             if lang == "zh"
                             else f"Horizon {date} Collapsible Daily"
                         ),
@@ -465,7 +465,7 @@ class WebhookNotifier:
                 {
                     **base_vars,
                     "message_title": (
-                        f"Horizon {date} 折叠日报"
+                        f"Horizon {date} 摺疊日報"
                         if lang == "zh"
                         else f"Horizon {date} Collapsible Daily"
                     ),
@@ -498,7 +498,7 @@ class WebhookNotifier:
             overview_message = {
                 **base_vars,
                 "message_title": (
-                    f"Horizon {date} 总览"
+                    f"Horizon {date} 總覽"
                     if lang == "zh"
                     else f"Horizon {date} Overview"
                 ),
@@ -536,7 +536,7 @@ class WebhookNotifier:
             {
                 **base_vars,
                 "message_title": (
-                    f"Horizon {date} 日报" if lang == "zh" else f"Horizon {date} Daily"
+                    f"Horizon {date} 日報" if lang == "zh" else f"Horizon {date} Daily"
                 ),
                 "message_kind": "summary",
                 "summary": summary,

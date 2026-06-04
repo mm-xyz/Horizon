@@ -114,8 +114,8 @@ def get_interests() -> str:
     console.print(
         "Describe what topics you'd like to follow. "
         "You can use Chinese, English, or both.\n"
-        "[dim]Examples: \"LLM inference\", \"具身智能\", \"Rust systems programming\", "
-        "\"web security\", \"开源工具\"[/dim]\n"
+        "[dim]Examples: \"LLM inference\", \"具身智慧\", \"Rust systems programming\", "
+        "\"web security\", \"開源工具\"[/dim]\n"
     )
     interests = Prompt.ask("Your interests")
     return interests

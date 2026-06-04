@@ -35,8 +35,8 @@ def _make_test_items() -> list[ContentItem]:
             ai_summary="OpenAI released GPT-5 featuring multimodal capabilities and improved reasoning.",
             ai_tags=["ai", "llm", "openai"],
             metadata={
-                "title_zh": "GPT-5 发布：多模态能力大幅提升",
-                "detailed_summary_zh": "OpenAI 发布了 GPT-5，具备多模态能力和更强的推理能力。",
+                "title_zh": "GPT-5 釋出：多模態能力大幅提升",
+                "detailed_summary_zh": "OpenAI 釋出了 GPT-5，具備多模態能力和更強的推理能力。",
             },
         ),
         ContentItem(
@@ -52,8 +52,8 @@ def _make_test_items() -> list[ContentItem]:
             ai_summary="Linux kernel 7.0 released with performance gains and new hardware support.",
             ai_tags=["linux", "kernel", "performance"],
             metadata={
-                "title_zh": "Linux 内核 7.0 发布",
-                "detailed_summary_zh": "Linux 内核 7.0 发布，带来显著性能提升和新硬件支持。",
+                "title_zh": "Linux 核心 7.0 釋出",
+                "detailed_summary_zh": "Linux 核心 7.0 釋出，帶來顯著效能提升和新硬體支援。",
             },
         ),
     ]
