@@ -66,6 +66,24 @@
         "category": "ai-startup"
       },
       {
+        "name": "Y Combinator Blog",
+        "url": "https://www.ycombinator.com/blog/rss.xml",
+        "enabled": true,
+        "category": "ai-startup"
+      },
+      {
+        "name": "a16z Blog",
+        "url": "https://a16z.com/feed/",
+        "enabled": true,
+        "category": "ai-startup"
+      },
+      {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/feed",
+        "enabled": true,
+        "category": "ai-products"
+      },
+      {
         "name": "SecurityInfoWatch",
         "url": "https://www.securityinfowatch.com/rss/all",
         "enabled": true,
